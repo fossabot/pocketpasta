@@ -103,7 +103,8 @@ module.exports = {
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        content:
+          'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui',
       },
       {
         hid: 'description',
@@ -132,7 +133,14 @@ module.exports = {
   generate: {
     // if you want to use '404.html' instead of the default '200.html'
     fallback: false,
-    routes: ['/', '/about', '/newsletter', '/recipes', '/recipes/detail/1'],
+    routes: [
+      '/',
+      '/about',
+      '/newsletter',
+      '/recipes',
+      '/recipes/detail/1',
+      '/recipes/detail/2',
+    ],
   },
 
   /*
@@ -165,6 +173,12 @@ module.exports = {
     '@nuxtjs/sentry',
     'bootstrap-vue/nuxt',
   ],
+
+  vuetify: {
+    treeShake: true,
+    css: false,
+    theme: false,
+  },
 
   googleAnalytics: {
     id: 'UA-125711214-1',
