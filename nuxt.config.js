@@ -63,12 +63,22 @@ module.exports = {
         href: '/favicon.ico',
       },
     ],
+    script: [
+      {
+        type: 'text/javascript',
+        src:
+          'https://platform-api.sharethis.com/js/sharethis.js#property=5ca7eb82fbd80b0011b667ca&product=inline-share-buttons',
+        async: 'async',
+      },
+    ],
   },
 
   generate: {
     // if you want to use '404.html' instead of the default '200.html'
-    fallback: false,
+    fallback: true,
     routes,
+    // middleware: ['router-auth'],
+    middleware: ['auth'],
   },
 
   /*
@@ -83,19 +93,23 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css',
+  ],
 
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~plugins/nuxt-quill-plugin.js', ssr: false }],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
@@ -103,6 +117,15 @@ module.exports = {
     '@nuxtjs/vuetify',
     'bootstrap-vue/nuxt',
   ],
+
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'pocketpasta.auth0.com',
+        client_id: 'SU9fkdMw6bqMkqwEZ2pX7sk3SlxR3Qi8',
+      },
+    },
+  },
 
   vuetify: {
     treeShake: true,

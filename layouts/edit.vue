@@ -69,9 +69,8 @@
           src="/images/icons/icon-32x32.png"
           width="32"
           height="32"
-          class="rounded"
+          class="d-inline-block rounded"
           alt="PocketPasta"
-          onerror="javascript:this.style.display = 'none !important'"
         />
         <span class="mx-1 hidden-sm-and-down">PocketPasta</span>
       </v-toolbar-title>
@@ -93,14 +92,7 @@
       </v-btn>
       <v-btn icon large aria-label="avatar">
         <v-avatar size="32px" tile>
-          <img
-            src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=32&d=wavatar&r=pg"
-            width="32"
-            height="32"
-            class="rounded"
-            alt="avatar"
-            onerror="javascript:this.style.display = 'none !important'"
-          />
+          <img src="/images/icons/icon-32x32.png" alt="PocketPasta" />
         </v-avatar>
       </v-btn>
     </v-toolbar>
@@ -112,6 +104,17 @@
     <!-- <v-btn fab bottom right color="pink" dark fixed @click="dialog = !dialog">
       <v-icon>add</v-icon>
     </v-btn> -->
+    <v-btn
+      fab
+      bottom
+      right
+      color="pink"
+      dark
+      fixed
+      :to="`${this.$route.path}/edit`"
+    >
+      <v-icon>edit</v-icon>
+    </v-btn>
     <v-dialog v-model="dialog" width="800px">
       <v-card>
         <v-card-title class="grey lighten-4 py-4 title"
@@ -211,15 +214,6 @@ export default {
     return {
       link: [this.$store.getters.getCurrentTheme()],
     };
-  },
-  methods: {
-    gravatar(email) {
-      const md5 = 'some md5';
-      const base = 'https://www.gravatar.com/avatar/';
-      const hash = md5(email.trim().toLowerCase());
-      const options = '?s=32&d=wavatar&r=pg';
-      return base + hash + options;
-    },
   },
   // mounted: function() {
   //   // Feature detects Navigation Timing API support.
