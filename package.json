@@ -1,9 +1,11 @@
 {
   "name": "pocketpasta",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "description": "Eat spagetti to forgetti the regretti",
   "author": "Damien Robinson <damien.robinson@pocketpasta.com>",
   "private": true,
+  "repository": "shadow81627/pocketpasta",
+  "homepage": "https://pocketpasta.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
@@ -27,7 +29,7 @@
     "@nuxtjs/sentry": "2.3.2",
     "@nuxtjs/sitemap": "0.2.2",
     "@nuxtjs/vuetify": "0.5.5",
-    "bootstrap-vue": "2.0.0-rc.16",
+    "bootstrap-vue": "2.0.0-rc.18",
     "cross-env": "5.2.0",
     "koa": "2.7.0",
     "nuxt": "2.6.1",
@@ -61,8 +63,8 @@
     "eslint-plugin-standard": "4.0.0",
     "eslint-plugin-vue": "5.2.2",
     "jest": "24.7.1",
-    "nodemon": "1.18.10",
-    "prettier": "1.16.4",
+    "nodemon": "1.18.11",
+    "prettier": "1.17.0",
     "stylus": "0.54.5",
     "stylus-loader": "3.0.2",
     "vue-jest": "3.0.4"

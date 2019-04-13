@@ -11,13 +11,13 @@ const routes = [
 ];
 
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
 
   manifest: {
     name: pkg.name,
     short_name: 'pocketpasta',
     description: pkg.description,
-    start_url: '/?utm_source=a2hs&standalone=true',
+    start_url: '/?utm_source=a2hs&utm_medium=none&standalone=true',
     scope: '/',
     display: 'standalone',
     background_color: '#4DBA87',
@@ -30,6 +30,7 @@ module.exports = {
 
   router: {
     linkActiveClass: 'active',
+    middleware: ['auth'],
   },
 
   /*
@@ -78,7 +79,6 @@ module.exports = {
     fallback: true,
     routes,
     // middleware: ['router-auth'],
-    middleware: ['auth'],
   },
 
   /*
@@ -119,11 +119,18 @@ module.exports = {
   ],
 
   auth: {
+    resetOnError: true,
     strategies: {
       auth0: {
         domain: 'pocketpasta.auth0.com',
         client_id: 'SU9fkdMw6bqMkqwEZ2pX7sk3SlxR3Qi8',
       },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login/',
+      home: '/',
     },
   },
 

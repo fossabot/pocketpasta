@@ -5,6 +5,7 @@
       :clipped="$vuetify.breakpoint.lgAndUp"
       fixed
       app
+      class="hidden-print-only"
     >
       <v-list dense>
         <template v-for="item in items">
@@ -62,7 +63,12 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar :clipped-left="$vuetify.breakpoint.lgAndUp" app fixed>
+    <v-toolbar
+      :clipped-left="$vuetify.breakpoint.lgAndUp"
+      app
+      fixed
+      class="hidden-print-only"
+    >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
         <v-toolbar-side-icon aria-label="menu" @click.stop="drawer = !drawer" />
         <img
@@ -91,18 +97,7 @@
       <v-btn icon aria-label="notifications">
         <v-icon>notifications</v-icon>
       </v-btn>
-      <v-btn icon large aria-label="avatar">
-        <v-avatar size="32px" tile>
-          <img
-            src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=32&d=wavatar&r=pg"
-            width="32"
-            height="32"
-            class="rounded"
-            alt="avatar"
-            onerror="javascript:this.style.display = 'none !important'"
-          />
-        </v-avatar>
-      </v-btn>
+      <UserMenu />
     </v-toolbar>
     <v-content>
       <div class="container">
@@ -165,9 +160,11 @@
 
 <script>
 import AddToHomeScreen from '@/components/AddToHomeScreen.vue';
+import UserMenu from '@/components/User/Menu.vue';
 export default {
   components: {
     AddToHomeScreen,
+    UserMenu,
   },
   data: () => ({
     dialog: false,
