@@ -77,18 +77,18 @@
           height="32"
           class="rounded"
           alt="PocketPasta"
-          onerror="javascript:this.style.display = 'none !important'"
+          onerror="javascript:this.style.display = 'none'"
         />
         <span class="mx-1 hidden-sm-and-down">PocketPasta</span>
       </v-toolbar-title>
-      <v-text-field
+      <!-- <v-text-field
         flat
         solo-inverted
         hide-details
         prepend-inner-icon="search"
         label="Search"
         class="hidden-sm-and-down"
-      />
+      /> -->
       <v-spacer />
       <AddToHomeScreen />
       <v-btn icon aria-label="apps">
@@ -104,6 +104,7 @@
         <nuxt />
       </div>
     </v-content>
+    <Footer />
     <!-- <v-btn fab bottom right color="pink" dark fixed @click="dialog = !dialog">
       <v-icon>add</v-icon>
     </v-btn> -->
@@ -161,10 +162,12 @@
 <script>
 import AddToHomeScreen from '@/components/AddToHomeScreen.vue';
 import UserMenu from '@/components/User/Menu.vue';
+import Footer from '@/components/Layout/Footer.vue';
 export default {
   components: {
     AddToHomeScreen,
     UserMenu,
+    Footer,
   },
   data: () => ({
     dialog: false,

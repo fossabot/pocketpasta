@@ -30,7 +30,7 @@ module.exports = {
 
   router: {
     linkActiveClass: 'active',
-    middleware: ['auth'],
+    // middleware: ['auth'],
   },
 
   /*
@@ -65,6 +65,12 @@ module.exports = {
       },
     ],
     script: [
+      {
+        type: 'text/javascript',
+        src:
+          'https://www.google.com/recaptcha/api.js?render=6LdQk5wUAAAAACVF6pTOxBSQ50_ZcNJ8EM94hBYc',
+        async: 'async',
+      },
       {
         type: 'text/javascript',
         src:

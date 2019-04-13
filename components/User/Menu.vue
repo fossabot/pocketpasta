@@ -3,15 +3,14 @@
     <template v-slot:activator="{ on }">
       <v-btn v-if="$auth.loggedIn" icon large aria-label="avatar" v-on="on">
         <v-avatar size="32px" tile>
-          <!-- https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d5?s=32&d=wavatar&r=pg -->
           <img
             v-if="$auth.user.picture"
             :src="$auth.user.picture"
             width="32"
             height="32"
-            class="rounded"
+            class="rounded-circle"
             alt="avatar"
-            onerror="javascript:this.style.display = 'none !important'"
+            onerror="javascript:this.style.display = 'none'"
           />
         </v-avatar>
       </v-btn>
@@ -28,7 +27,10 @@
           </v-list-tile-avatar>
 
           <v-list-tile-content>
-            <v-list-tile-title>{{ $auth.user.name }}</v-list-tile-title>
+            <v-list-tile-title v-if="$auth.user.name !== $auth.user.email">{{
+              $auth.user.name
+            }}</v-list-tile-title>
+            <v-list-tile-title>{{ $auth.user.email }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
