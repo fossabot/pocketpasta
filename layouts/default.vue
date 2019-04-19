@@ -6,6 +6,7 @@
       fixed
       app
       class="hidden-print-only"
+      style="background: unset; color: unset;"
     >
       <v-list dense>
         <template v-for="item in items">
@@ -70,7 +71,11 @@
       class="hidden-print-only"
     >
       <v-toolbar-title style="width: 300px" class="ml-0 pl-3">
-        <v-toolbar-side-icon aria-label="menu" @click.stop="drawer = !drawer" />
+        <v-toolbar-side-icon
+          aria-label="menu"
+          style="background: unset; color: unset;"
+          @click.stop="drawer = !drawer"
+        />
         <img
           src="/images/icons/icon-32x32.png"
           width="32"
@@ -79,7 +84,7 @@
           alt="PocketPasta"
           onerror="javascript:this.style.display = 'none'"
         />
-        <span class="mx-1 hidden-sm-and-down">PocketPasta</span>
+        <span class="brand mx-1 hidden-sm-and-down">PocketPasta</span>
       </v-toolbar-title>
       <!-- <v-text-field
         flat
@@ -91,20 +96,22 @@
       /> -->
       <v-spacer />
       <AddToHomeScreen />
-      <v-btn icon aria-label="apps">
+      <v-btn icon aria-label="apps" style="background: unset; color: unset;">
         <v-icon>apps</v-icon>
       </v-btn>
-      <v-btn icon aria-label="notifications">
+      <v-btn
+        icon
+        aria-label="notifications"
+        style="background: unset; color: unset;"
+      >
         <v-icon>notifications</v-icon>
       </v-btn>
       <UserMenu />
     </v-toolbar>
     <v-content>
-      <div class="container">
-        <nuxt />
-      </div>
+      <nuxt />
     </v-content>
-    <Footer />
+    <Footer style="background: unset; color: unset;" />
     <!-- <v-btn fab bottom right color="pink" dark fixed @click="dialog = !dialog">
       <v-icon>add</v-icon>
     </v-btn> -->
@@ -171,7 +178,7 @@ export default {
   },
   data: () => ({
     dialog: false,
-    drawer: null,
+    drawer: false,
     items: [
       { icon: 'home', text: 'Home', link: '/' },
       { icon: 'info', text: 'About', link: '/about' },
@@ -212,29 +219,13 @@ export default {
       link: [this.$store.getters.getCurrentTheme()],
     };
   },
-  methods: {
-    gravatar(email) {
-      const md5 = 'some md5';
-      const base = 'https://www.gravatar.com/avatar/';
-      const hash = md5(email.trim().toLowerCase());
-      const options = '?s=32&d=wavatar&r=pg';
-      return base + hash + options;
-    },
-  },
-  // mounted: function() {
-  //   // Feature detects Navigation Timing API support.
-  //   if (typeof window !== 'undefined' && window.performance) {
-  //     // Gets the number of milliseconds since page load
-  //     // (and rounds the result since the value must be an integer).
-  //     const timeSincePageLoad = Math.round(performance.now());
-
-  //     // Sends the timing hit to Google Analytics.
-  //     this.$ga.time({
-  //       timingCategory: 'JS Dependencies',
-  //       timingVar: 'load',
-  //       timingValue: timeSincePageLoad,
-  //     });
-  //   }
-  // },
 };
 </script>
+
+<style>
+@import url('~/assets/css/font.css');
+
+.brand {
+  font-family: 'Comic Neue', sans-serif;
+}
+</style>

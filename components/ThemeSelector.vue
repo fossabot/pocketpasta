@@ -1,5 +1,9 @@
 <template>
-  <form>
+  <form
+    @submit.prevent="
+      $auth.$storage.setUniversal('theme', $store.state.theme, true)
+    "
+  >
     <h1>Settings</h1>
     <div class="form-group">
       <label for="theme">Select a theme</label>
@@ -20,7 +24,9 @@
         </option>
       </select>
     </div>
-    <!-- <button class="btn btn-primary">A Button</button> -->
+    <button class="btn btn-primary">
+      Save theme
+    </button>
   </form>
 </template>
 
@@ -29,6 +35,11 @@ export default {
   data() {
     return {
       themes: [
+        {
+          value: 'default',
+          href:
+            'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
+        },
         {
           value: 'cerulean',
           href: 'https://bootswatch.com/4/cerulean/bootstrap.min.css',

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ThemeSelector renders properly 1`] = `
-"<form><h1>Settings</h1> <div class=\\"form-group\\"><label for=\\"theme\\">Select a theme</label> <select id=\\"theme\\" name=\\"theme\\" class=\\"form-control\\"><option disabled=\\"disabled\\" value=\\"\\">Please select a theme</option> <option class=\\"form-control\\" value=\\"cerulean\\">
+"<form><h1>Settings</h1> <div class=\\"form-group\\"><label for=\\"theme\\">Select a theme</label> <select id=\\"theme\\" name=\\"theme\\" class=\\"form-control\\"><option disabled=\\"disabled\\" value=\\"\\">Please select a theme</option> <option class=\\"form-control\\" value=\\"default\\">
+        default
+      </option><option class=\\"form-control\\" value=\\"cerulean\\">
         cerulean
       </option><option class=\\"form-control\\" value=\\"cosmo\\">
         cosmo
@@ -43,5 +45,7 @@ exports[`ThemeSelector renders properly 1`] = `
         untied
       </option><option class=\\"form-control\\" value=\\"yeti\\">
         yeti
-      </option></select></div></form>"
+      </option></select></div> <button class=\\"btn btn-primary\\">
+    Save theme
+  </button></form>"
 `;

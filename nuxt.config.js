@@ -30,7 +30,7 @@ module.exports = {
 
   router: {
     linkActiveClass: 'active',
-    // middleware: ['auth'],
+    middleware: ['theme'],
   },
 
   /*
@@ -84,7 +84,6 @@ module.exports = {
     // if you want to use '404.html' instead of the default '200.html'
     fallback: true,
     routes,
-    // middleware: ['router-auth'],
   },
 
   /*
@@ -144,6 +143,11 @@ module.exports = {
     treeShake: true,
     theme: false,
     // iconfont: 'md',
+  },
+
+  bootstrapVue: {
+    bootstrapCSS: false, // or `css`
+    bootstrapVueCSS: true, // or `bvCSS`
   },
 
   googleAnalytics: {
