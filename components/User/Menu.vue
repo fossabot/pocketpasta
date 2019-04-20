@@ -15,7 +15,9 @@
         </v-avatar>
       </v-btn>
       <v-btn v-else aria-label="login" @click="$auth.loginWith('auth0')">
-        {{ $t('layout.login') }}
+        <v-icon>account_circle</v-icon>
+        <span>&nbsp;</span>
+        <span>{{ $t('layout.login') }}</span>
       </v-btn>
     </template>
 
@@ -56,8 +58,5 @@ export default {
   data: () => ({
     menu: false,
   }),
-  async fetch(context) {
-    await context.app.$auth.fetchUser();
-  },
 };
 </script>
