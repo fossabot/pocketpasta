@@ -14,7 +14,7 @@ export default () => {
       },
       landing: {
         banner: {
-          subheading: 'Eat spagetti to forgetti the regretti',
+          subheading: 'Eat spagetti to forgetti your regretti',
         },
         contact: {
           heading: 'Contact us',
@@ -25,13 +25,25 @@ export default () => {
           heading: 'Company info',
         },
       },
+      about: {
+        heading: 'About PocketPasta',
+      },
       newsletter: {
         heading: 'Subscribe to our mailing list',
         required: 'indicates required',
-        email: 'Email Address',
-        firstname: 'First Name',
-        lastname: 'Last Name',
+        email: {
+          label: 'Email Address',
+          placeholder: 'john.smith@example.com',
+        },
+        firstname: { label: 'First Name', placeholder: 'John' },
+        lastname: { label: 'Last Name', placeholder: 'Smith' },
         submit: 'Subscribe',
+      },
+      recipes: {
+        heading: 'Recipes',
+      },
+      settings: {
+        heading: 'Settings',
       },
     });
   });

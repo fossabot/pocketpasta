@@ -13,28 +13,44 @@
       >
         <div id="mc_embed_signup_scroll">
           <h1>{{ $t('newsletter.heading') }}</h1>
-          <div class="indicates-required">
-            <span class="asterisk">*</span> {{ $t('newsletter.required') }}
+          <div class="indicates-required text-right">
+            <span class="asterisk text-danger">*</span>
+            {{ $t('newsletter.required') }}
           </div>
-          <div class="mc-field-group">
+          <div class="mc-field-group form-group pb-4">
             <label for="mce-EMAIL">
-              {{ $t('newsletter.email') }}
-              <span class="asterisk">*</span>
+              {{ $t('newsletter.email.label') }}
+              <span class="asterisk text-danger">*</span>
             </label>
             <input
               id="mce-EMAIL"
               type="email"
               name="EMAIL"
-              class="required email"
+              class="form-control required email"
+              :placeholder="$t('newsletter.email.placeholder')"
             />
           </div>
-          <div class="mc-field-group">
-            <label for="mce-FNAME">{{ $t('newsletter.firstname') }}</label>
-            <input id="mce-FNAME" type="text" name="FNAME" />
+          <div class="mc-field-group form-group pb-4">
+            <label for="mce-FNAME">{{
+              $t('newsletter.firstname.label')
+            }}</label>
+            <input
+              id="mce-FNAME"
+              type="text"
+              name="FNAME"
+              class="form-control"
+              :placeholder="$t('newsletter.firstname.placeholder')"
+            />
           </div>
-          <div class="mc-field-group">
-            <label for="mce-LNAME">{{ $t('newsletter.lastname') }}</label>
-            <input id="mce-LNAME" type="text" name="LNAME" />
+          <div class="mc-field-group form-group pb-4">
+            <label for="mce-LNAME">{{ $t('newsletter.lastname.label') }}</label>
+            <input
+              id="mce-LNAME"
+              type="text"
+              name="LNAME"
+              class="form-control"
+              :placeholder="$t('newsletter.lastname.placeholder')"
+            />
           </div>
           <div id="mce-responses" class="clear">
             <div
@@ -64,7 +80,7 @@
               type="submit"
               :value="$t('newsletter.submit')"
               name="subscribe"
-              class="button"
+              class="button btn btn-primary"
             />
           </div>
         </div>
@@ -96,5 +112,5 @@ export default {
 </script>
 
 <style>
-@import url('//cdn-images.mailchimp.com/embedcode/classic-10_7.css');
+/* @import url('https://cdn-images.mailchimp.com/embedcode/classic-10_7.css'); */
 </style>
