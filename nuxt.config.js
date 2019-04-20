@@ -10,6 +10,30 @@ const routes = [
   '/recipes/detail/2',
 ];
 
+const i18nSettings = {
+  baseUrl: 'https://pocketpasta.com',
+  defaultLocale: 'en',
+  vueI18n: {
+    fallbackLocale: 'en',
+  },
+  locales: [
+    {
+      code: 'en',
+      name: 'English',
+      iso: 'en-US',
+      file: 'en-US.js',
+    },
+    {
+      code: 'fr',
+      name: 'Français',
+      iso: 'fr-FR',
+      file: 'fr-FR.js',
+    },
+  ],
+  lazy: true,
+  langDir: 'lang/',
+};
+
 module.exports = {
   mode: 'spa',
 
@@ -121,6 +145,7 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/vuetify',
     'bootstrap-vue/nuxt',
+    ['nuxt-i18n', i18nSettings],
   ],
 
   auth: {
@@ -172,7 +197,6 @@ module.exports = {
     hostname: 'https://pocketpasta.com',
     routes,
     gzip: true,
-    generate: true, // Enable me when using nuxt generate
   },
 
   /*

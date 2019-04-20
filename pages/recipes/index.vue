@@ -7,7 +7,12 @@
           v-for="recipe in recipes"
           :key="recipe.id"
           class="list-group-item"
-          :to="`/recipes/detail/${recipe.id}`"
+          :to="
+            localePath({
+              name: 'recipes-detail-id',
+              params: { id: recipe.id },
+            })
+          "
           tag="li"
         >
           <a>{{ recipe.name || `Recipe: ${recipe.id}` }}</a>
@@ -26,8 +31,16 @@ export default {
   },
   head() {
     return {
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Easy pasta recipes made with simple ingredients.',
+        },
+      ],
       link: [
         {
+          hid: 'canonical',
           rel: 'canonical',
           href: 'https://pocketpasta.com/recipes',
         },

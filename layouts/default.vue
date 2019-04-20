@@ -29,9 +29,10 @@
               <v-list-tile>
                 <v-list-tile-content>
                   <v-list-tile-title
-                    ><nuxt-link :to="item.link ? item.link : ''">{{
-                      item.text
-                    }}</nuxt-link></v-list-tile-title
+                    ><nuxt-link
+                      :to="localePath(item.route ? item.route : {})"
+                      >{{ item.text }}</nuxt-link
+                    ></v-list-tile-title
                   >
                 </v-list-tile-content>
               </v-list-tile>
@@ -42,7 +43,7 @@
               </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>
-                  <nuxt-link :to="item.link ? item.link : ''">{{
+                  <nuxt-link :to="localePath(item.route ? item.route : {})">{{
                     child.text
                   }}</nuxt-link></v-list-tile-title
                 >
@@ -55,7 +56,7 @@
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>
-                <nuxt-link :to="item.link ? item.link : ''">{{
+                <nuxt-link :to="localePath(item.route ? item.route : {})">{{
                   item.text
                 }}</nuxt-link>
               </v-list-tile-title>
@@ -96,7 +97,7 @@
       /> -->
       <v-spacer />
       <AddToHomeScreen />
-      <v-btn icon aria-label="apps" style="background: unset; color: unset;">
+      <!-- <v-btn icon aria-label="apps" style="background: unset; color: unset;">
         <v-icon>apps</v-icon>
       </v-btn>
       <v-btn
@@ -105,7 +106,8 @@
         style="background: unset; color: unset;"
       >
         <v-icon>notifications</v-icon>
-      </v-btn>
+      </v-btn> -->
+      <LangSwitcher />
       <UserMenu />
     </v-toolbar>
     <v-content>
@@ -170,50 +172,74 @@
 import AddToHomeScreen from '@/components/AddToHomeScreen.vue';
 import UserMenu from '@/components/User/Menu.vue';
 import Footer from '@/components/Layout/Footer.vue';
+import LangSwitcher from '@/components/Layout/LangSwitcher';
 export default {
   components: {
     AddToHomeScreen,
     UserMenu,
     Footer,
+    LangSwitcher,
   },
-  data: () => ({
-    dialog: false,
-    drawer: false,
-    items: [
-      { icon: 'home', text: 'Home', link: '/' },
-      { icon: 'info', text: 'About', link: '/about' },
-      { icon: 'email', text: 'Newsletter', link: '/newsletter' },
-      { icon: 'book', text: 'Recipes', link: '/recipes' },
-      // { icon: 'contacts', text: 'Contacts' },
-      // { icon: 'history', text: 'Frequently contacted' },
-      // { icon: 'content_copy', text: 'Duplicates' },
-      // {
-      //   icon: 'keyboard_arrow_up',
-      //   'icon-alt': 'keyboard_arrow_down',
-      //   text: 'Labels',
-      //   model: true,
-      //   children: [{ icon: 'add', text: 'Create label' }],
-      // },
-      // {
-      //   icon: 'keyboard_arrow_up',
-      //   'icon-alt': 'keyboard_arrow_down',
-      //   text: 'More',
-      //   model: false,
-      //   children: [
-      //     { text: 'Import' },
-      //     { text: 'Export' },
-      //     { text: 'Print' },
-      //     { text: 'Undo changes' },
-      //     { text: 'Other contacts' },
-      //   ],
-      // },
-      { icon: 'settings', text: 'Settings', link: '/settings' },
-      // { icon: 'chat_bubble', text: 'Send feedback' },
-      // { icon: 'help', text: 'Help' },
-      // { icon: 'phonelink', text: 'App downloads' },
-      // { icon: 'keyboard', text: 'Go to the old version' },
-    ],
-  }),
+  data: function() {
+    return {
+      dialog: false,
+      drawer: false,
+      items: [
+        {
+          icon: 'home',
+          text: this.$t('layout.navigation.home'),
+          route: { name: 'index' },
+        },
+        {
+          icon: 'info',
+          text: this.$t('layout.navigation.about'),
+          route: { name: 'about' },
+        },
+        {
+          icon: 'email',
+          text: this.$t('layout.navigation.newsletter'),
+          route: { name: 'newsletter' },
+        },
+        {
+          icon: 'book',
+          text: this.$t('layout.navigation.recipes'),
+          route: { name: 'recipes' },
+        },
+        // { icon: 'contacts', text: 'Contacts' },
+        // { icon: 'history', text: 'Frequently contacted' },
+        // { icon: 'content_copy', text: 'Duplicates' },
+        // {
+        //   icon: 'keyboard_arrow_up',
+        //   'icon-alt': 'keyboard_arrow_down',
+        //   text: 'Labels',
+        //   model: true,
+        //   children: [{ icon: 'add', text: 'Create label' }],
+        // },
+        // {
+        //   icon: 'keyboard_arrow_up',
+        //   'icon-alt': 'keyboard_arrow_down',
+        //   text: 'More',
+        //   model: false,
+        //   children: [
+        //     { text: 'Import' },
+        //     { text: 'Export' },
+        //     { text: 'Print' },
+        //     { text: 'Undo changes' },
+        //     { text: 'Other contacts' },
+        //   ],
+        // },
+        {
+          icon: 'settings',
+          text: this.$t('layout.navigation.settings'),
+          route: { name: 'settings' },
+        },
+        // { icon: 'chat_bubble', text: 'Send feedback' },
+        // { icon: 'help', text: 'Help' },
+        // { icon: 'phonelink', text: 'App downloads' },
+        // { icon: 'keyboard', text: 'Go to the old version' },
+      ],
+    };
+  },
   head() {
     return {
       link: [this.$store.getters.getCurrentTheme()],
