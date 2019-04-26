@@ -5,7 +5,7 @@
       v-for="tag in tags"
       :key="tag"
       href="#"
-      class="list-inline-item btn tag tag-primary"
+      class="list-inline-item btn tag btn-primary"
       role="button"
       >{{ tag.trim() }}
     </a>
@@ -40,10 +40,5 @@ export default {
   font-weight: bold;
   padding: 2px 4px;
   margin-bottom: 0.5rem;
-}
-
-.tag-primary {
-  background: #1abc9c;
-  color: #f5f5f5;
 }
 </style>
