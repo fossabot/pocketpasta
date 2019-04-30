@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Recipe renders properly 1`] = `
-"<div class=\\"recipe\\"><h1>Audrey Hepburn’s Spaghetti Al Pomodoro Recipe</h1> <p>Make Audrey Hepburn's spaghetti al pomodoro recipe. Hepburn liked her pasta smothered in tomato sauce.</p> <img src=\\"https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/162208.jpg\\" alt=\\"Audrey Hepburn’s Spaghetti Al Pomodoro Recipe\\" class=\\"img-fluid\\"> <div class=\\"sharethis-inline-share-buttons p-4 d-print-none\\"></div> <p><strong>Makes:</strong> <span>4 servings</span></p> <h2>Ingredients:</h2> <ol class=\\"list-group-flush\\"><li class=\\"list-group-item\\">
+"<div class=\\"recipe\\"><h1>Audrey Hepburn’s Spaghetti Al Pomodoro Recipe</h1> <p>Make Audrey Hepburn's spaghetti al pomodoro recipe. Hepburn liked her pasta smothered in tomato sauce.</p> <img src=\\"https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/162208.jpg\\" alt=\\"Audrey Hepburn’s Spaghetti Al Pomodoro Recipe\\" class=\\"img-fluid\\"> <share-stub class=\\"py-4\\"></share-stub> <p><strong>Makes:</strong> <span>4 servings</span></p> <h2>Ingredients:</h2> <ol class=\\"list-group-flush\\"><li class=\\"list-group-item\\">
       1 small onion, diced
     </li><li class=\\"list-group-item\\">
       2 cloves garlic, minced
@@ -30,7 +30,7 @@ exports[`Recipe renders properly 1`] = `
     </li><li class=\\"list-group-item\\">
       After 45 minutes, or when the vegetables are tender, remove the sauce from the heat and let rest for 15 minutes.
     </li><li class=\\"list-group-item\\">
-      While the sauce is simmering, fill another large pot with water and bring to a boil. Add salt, if desired. Cook the spaghetti until al dente. Drain and rinse the pasta with lukewarm water to prevent sticking.
+      While the sauce is simmering, fill another large pot with water and bring to a boil. Add salt, if desired. Cook the spaghetti until al dente. Drain the pasta.
     </li><li class=\\"list-group-item\\">
       Taste the sauce and add salt, if desired. Serve pasta topped generously with sauce, grated Parmigiano-Reggiano cheese, and the reserved sliced basil leaves.
     </li></ol> <keywords-stub label=\\"Tags\\" tags=\\"Audrey Hepburn, recipe, Pasta Recipes, Sauce Recipes, Audrey, Hepburn, spaghetti, spathetti, pomodoro, pasta, history, sauce\\"></keywords-stub></div>"
