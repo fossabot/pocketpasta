@@ -25,7 +25,7 @@ export const getters = {
     state.themes.find((theme) => theme.value === value),
   getCurrentTheme: (state) => () => {
     return {
-      hid: state.theme.name,
+      hid: 'theme',
       href: state.theme.href,
       rel: 'stylesheet',
       dark: state.theme.dark,
@@ -36,6 +36,7 @@ export const getters = {
 export const mutations = {
   setTheme(currentState, theme) {
     currentState.theme = theme;
+    this.$auth.$storage.setUniversal('theme', theme, true);
   },
 };
 

@@ -107,12 +107,6 @@ module.exports = {
           'https://www.google.com/recaptcha/api.js?render=6LdQk5wUAAAAACVF6pTOxBSQ50_ZcNJ8EM94hBYc',
         async: 'async',
       },
-      {
-        type: 'text/javascript',
-        src:
-          'https://platform-api.sharethis.com/js/sharethis.js#property=5ca7eb82fbd80b0011b667ca&product=inline-share-buttons',
-        async: 'async',
-      },
     ],
   },
 
@@ -154,10 +148,13 @@ module.exports = {
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
     '@nuxtjs/sentry',
-    '@nuxtjs/sitemap',
     '@nuxtjs/vuetify',
     'bootstrap-vue/nuxt',
     ['nuxt-i18n', i18nSettings],
+    'nuxt-webfontloader',
+
+    // keep sitemap last
+    '@nuxtjs/sitemap',
   ],
 
   auth: {
@@ -185,7 +182,7 @@ module.exports = {
   bootstrapVue: {
     bootstrapCSS: false, // or `css`
     bootstrapVueCSS: true, // or `bvCSS`
-    componentPlugins: ['Image'],
+    componentPlugins: ['Image', 'FormSelect '],
     directivePlugins: ['Tooltip'],
   },
 
@@ -209,6 +206,19 @@ module.exports = {
     hostname: 'https://pocketpasta.com',
     routes,
     gzip: true,
+    // defaults: {
+    //   changefreq: 'daily',
+    //   priority: 1,
+    //   lastmod: new Date(),
+    //   lastmodrealtime: true,
+    // },
+  },
+
+  webfontloader: {
+    custom: {
+      families: ['Comic Neue'],
+      urls: ['@/assets/css/fonts.css'],
+    },
   },
 
   /*
@@ -222,6 +232,8 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    // move component styles into css files
+    // extractCSS: true,
     /*
      ** You can extend webpack config here
      */

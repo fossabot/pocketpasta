@@ -1,32 +1,21 @@
 <template>
-  <form
-    @submit.prevent="
-      $auth.$storage.setUniversal('theme', $store.state.theme, true)
-    "
+  <b-form-select
+    id="theme"
+    v-model="currentTheme"
+    name="theme"
+    aria-label="theme"
   >
-    <div class="form-group">
-      <label for="theme">Theme</label>
-      <select
-        id="theme"
-        v-model="currentTheme"
-        name="theme"
-        class="form-control"
-      >
-        <option disabled value="">Please select a theme</option>
-        <option
-          v-for="theme in $store.state.themes"
-          :key="theme.value"
-          :value="theme.value"
-          class="form-control"
-        >
-          {{ theme.value }}
-        </option>
-      </select>
-    </div>
-    <button class="btn btn-primary">
-      Save
-    </button>
-  </form>
+    <template slot="first">
+      <option disabled value="">Please select a theme</option>
+    </template>
+    <option
+      v-for="theme in $store.state.themes"
+      :key="theme.value"
+      :value="theme.value"
+    >
+      {{ theme.value }}
+    </option>
+  </b-form-select>
 </template>
 
 <script>
@@ -40,16 +29,25 @@ export default {
         this.$store.commit('setTheme', this.$store.getters.getThemeById(value));
       },
     },
+    themeMeta: function() {
+      return this.$store.state.themes.map((theme) => {
+        const themeLink = {
+          hid: `theme-${theme.value}`,
+          href: theme.href,
+          rel: 'stylesheet',
+          as: 'style',
+        };
+        if (theme.value !== this.currentTheme) {
+          themeLink.disabled = true;
+          themeLink.rel = 'preload';
+        }
+        return themeLink;
+      });
+    },
   },
   head() {
     return {
-      link: this.$store.state.themes.map((theme) => ({
-        hid: `theme-${theme.value}`,
-        disabled: 'disabled',
-        href: theme.href,
-        rel: 'preload',
-        as: 'style',
-      })),
+      link: [].concat(this.themeMeta),
     };
   },
 };
