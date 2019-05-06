@@ -99,13 +99,35 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico',
       },
-    ],
-    script: [
       {
-        type: 'text/javascript',
-        src:
-          'https://www.google.com/recaptcha/api.js?render=6LdQk5wUAAAAACVF6pTOxBSQ50_ZcNJ8EM94hBYc',
-        async: 'async',
+        rel: 'preconnect',
+        href: 'https://pocketpasta.auth0.com',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://stackpath.bootstrapcdn.com',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://stats.g.doubleclick.net',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://www.google.com.au',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://www.google-analytics.com',
+        crossorigin: 'crossorigin',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://www.google.com',
+        crossorigin: 'crossorigin',
       },
     ],
   },
@@ -147,6 +169,7 @@ module.exports = {
     '@nuxtjs/auth',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
+    '@nuxtjs/recaptcha',
     '@nuxtjs/sentry',
     '@nuxtjs/vuetify',
     'bootstrap-vue/nuxt',
@@ -156,6 +179,14 @@ module.exports = {
     // keep sitemap last
     '@nuxtjs/sitemap',
   ],
+
+  recaptcha: {
+    // Hide badge element (v3)
+    hideBadge: true,
+    // Site key for requests
+    siteKey: '6LdQk5wUAAAAACVF6pTOxBSQ50_ZcNJ8EM94hBYc',
+    version: 3,
+  },
 
   auth: {
     resetOnError: true,
@@ -206,18 +237,11 @@ module.exports = {
     hostname: 'https://pocketpasta.com',
     routes,
     gzip: true,
-    // defaults: {
-    //   changefreq: 'daily',
-    //   priority: 1,
-    //   lastmod: new Date(),
-    //   lastmodrealtime: true,
-    // },
   },
 
   webfontloader: {
     custom: {
       families: ['Comic Neue'],
-      urls: ['@/assets/css/fonts.css'],
     },
   },
 
