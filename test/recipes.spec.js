@@ -2,14 +2,19 @@ import { shallowMount, createLocalVue, RouterLinkStub } from '@vue/test-utils';
 import recipes from '@/pages/recipes/index.vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
+import Vuetify from 'vuetify';
+import BootstrapVue from 'bootstrap-vue';
 
 import spaghetti from '@/assets/link-data/spaghetti.json';
 
 const localVue = createLocalVue();
 
-localVue.use(Vuex);
+const recipe = delete spaghetti['@context'];
 
+localVue.use(Vuex);
 localVue.use(VueRouter);
+localVue.use(Vuetify);
+localVue.use(BootstrapVue);
 
 const router = new VueRouter();
 
@@ -20,7 +25,7 @@ let mutations;
 
 beforeEach(() => {
   state = {
-    recipes: [{ ...spaghetti, id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
+    recipes: [{ ...recipe, id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }],
   };
 
   getters = {

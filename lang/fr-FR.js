@@ -22,6 +22,7 @@ export default () => {
           about: 'Sur',
           newsletter: 'Bulletin',
           recipes: 'Recettes',
+          products: 'Boutique',
           settings: 'Réglages',
         },
       },
@@ -55,8 +56,29 @@ export default () => {
       recipes: {
         heading: 'Recettes',
       },
+      products: {
+        heading: 'Des produits',
+      },
       settings: {
         heading: 'Réglages',
+        style: {
+          heading: 'Style',
+          'theme-label': {
+            id: 'theme-label',
+            icon: 'style',
+            label: 'Thème',
+            description:
+              "Choisissez un thème CSS d'amorçage pour personnaliser l'application à votre façon.",
+          },
+        },
+        content: {
+          heading: 'Contenu',
+          language: {
+            icon: 'language',
+            label: 'La Langue',
+            description: 'Quelle langue parlez-vous?',
+          },
+        },
       },
     });
   });

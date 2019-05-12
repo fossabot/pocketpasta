@@ -114,7 +114,11 @@ export default {
     return {
       dialog: false,
       drawer: false,
-      items: [
+    };
+  },
+  computed: {
+    items: function() {
+      return [
         {
           icon: 'home',
           text: this.$t('layout.navigation.home'),
@@ -136,14 +140,17 @@ export default {
           route: { name: 'recipes' },
         },
         {
+          icon: 'store',
+          text: this.$t('layout.navigation.products'),
+          route: { name: 'products' },
+        },
+        {
           icon: 'settings',
           text: this.$t('layout.navigation.settings'),
           route: { name: 'settings' },
         },
-      ],
-    };
-  },
-  computed: {
+      ];
+    },
     isDark: function() {
       return this.$store.getters.getCurrentTheme().dark;
     },
@@ -156,8 +163,10 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url('~/assets/css/font.css');
+
+@import '~/assets/scss/custom.scss';
 
 .brand {
   font-family: 'Comic Neue', sans-serif;

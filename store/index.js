@@ -1,10 +1,10 @@
-import recipe from '@/assets/link-data/spaghetti.json';
-
 import damien from '@/assets/link-data/damien.json';
 
+import recipe from '@/assets/link-data/spaghetti.json';
 import pastaAglioEOlio from '@/assets/link-data/recipe/pasta_aglio_e_olio.json';
-
 import lasagnaSalad from '@/assets/link-data/recipe/lasagna-salad.json';
+
+import tomatoes from '@/assets/link-data/products/tomatoes.json';
 
 import themes from '@/assets/themes';
 
@@ -21,12 +21,15 @@ export const state = () => ({
     { ...pastaAglioEOlio, id: 2 },
     { ...lasagnaSalad, id: 3 },
   ],
+  products: [{ ...tomatoes, id: 1 }],
   damien,
 });
 
 export const getters = {
   getRecipeById: (state) => (id) =>
     state.recipes.find((recipe) => recipe.id === id),
+  getProductById: (state) => (id) =>
+    state.products.find((product) => product.id === id),
   getThemeById: (state) => (value) =>
     state.themes.find((theme) => theme.value === value),
   getCurrentTheme: (state) => () => {

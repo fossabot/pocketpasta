@@ -14,20 +14,24 @@
         </div>
       </div>
 
-      <div class="row">
-        <Profile
-          class="card bg-light card-body"
-          v-bind="this.$store.state.damien"
-        />
-      </div>
+      <TwoByOne>
+        <template #column-1>
+          <b-img-lazy
+            class="img-fluid mx-auto d-block"
+            alt="Typing monkey"
+            src="https://cdn-images-1.medium.com/max/600/1*6BIIyDspOhlLYW5ZiK6b1Q.jpeg"
+          />
+        </template>
+        <template #column-2>
+          <Profile v-bind="$store.state.damien" />
+        </template>
+      </TwoByOne>
 
       <TwoByOne>
         <template #column-1>
           <h2>What's with the name?</h2>
           <p>
-            Our favorite food is pasta so we made a website about pasta. Our
-            second favorite thing is memes, so we name our third favorite thing
-            after our other favorite things. The name comes form 4chan
+            The name comes form 4chan
             <a href="https://knowyourmeme.com/memes/spaghetti-stories"
               >Spaghetti Stories</a
             >
@@ -37,11 +41,15 @@
               >greentext</a
             >. While the plot may vary from one to another, each story ends when
             spaghetti suddenly falls out of one’s pocket or fanny pack, similar
-            to the twist in Fresh Prince of Bel-Air copypasta stories.
+            to the twist in
+            <a href="https://knowyourmeme.com/memes/bel-air-fresh-prince"
+              >Fresh Prince of Bel-Air</a
+            >
+            copypasta stories.
           </p>
         </template>
         <template #column-2>
-          <img
+          <b-img-lazy
             class="img-fluid mx-auto d-block"
             alt="Spaghetti suddenly falls out Pepe"
             src="https://i.kym-cdn.com/photos/images/original/001/182/064/60a.jpg"
