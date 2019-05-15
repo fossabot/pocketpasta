@@ -159,7 +159,10 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/nuxt-quill-plugin.js', ssr: false }],
+  plugins: [
+    { src: '~plugins/nuxt-quill-plugin.js', ssr: false },
+    { src: '~/plugins/firebase.js', ssr: false },
+  ],
 
   /*
    ** Nuxt.js modules
