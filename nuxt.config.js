@@ -102,32 +102,32 @@ module.exports = {
       {
         rel: 'preconnect',
         href: 'https://pocketpasta.auth0.com',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
       {
         rel: 'preconnect',
         href: 'https://stackpath.bootstrapcdn.com',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
       {
         rel: 'preconnect',
         href: 'https://stats.g.doubleclick.net',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
       {
         rel: 'preconnect',
         href: 'https://www.google.com.au',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
       {
         rel: 'preconnect',
         href: 'https://www.google-analytics.com',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
       {
         rel: 'preconnect',
         href: 'https://www.google.com',
-        crossorigin: 'crossorigin',
+        crossorigin: 'anonymous',
       },
     ],
   },
@@ -162,6 +162,7 @@ module.exports = {
   plugins: [
     { src: '~plugins/nuxt-quill-plugin.js', ssr: false },
     { src: '~/plugins/firebase.js', ssr: false },
+    { src: '~/plugins/quicklink', ssr: false },
   ],
 
   /*

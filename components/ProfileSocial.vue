@@ -2,7 +2,7 @@
   <div class="mb-3 profile">
     <div class="col-md-12">
       <div class="$col-md-6">
-        <h3>{{ name }}</h3>
+        <h2>{{ name }}</h2>
         <KeyValue label="Job Title" :value="jobTitle" />
         <KeyValue label="About" :value="description" />
         <Keywords :tags="keywords ? keywords.split(',') : []" label="Skills" />
@@ -10,17 +10,31 @@
           <div
             class="list-inline-item a2a_kit a2a_kit_size_32 a2a_default_style a2a_follow"
           >
-            <a class="a2a_button_twitter" data-a2a-follow="Shadow81627" />
+            <a
+              class="a2a_button_twitter"
+              data-a2a-follow="Shadow81627"
+              rel="noopener"
+            />
             <a
               class="a2a_button_facebook"
               data-a2a-follow="damien.robinson.5036"
+              rel="noopener"
             />
             <a
               class="a2a_button_linkedin"
               data-a2a-follow="damien-robinson-788925101"
+              rel="noopener"
             />
-            <a class="a2a_button_youtube" data-a2a-follow="shadow81627" />
-            <a class="a2a_button_github" data-a2a-follow="shadow81627" />
+            <a
+              class="a2a_button_youtube"
+              data-a2a-follow="shadow81627"
+              rel="noopener"
+            />
+            <a
+              class="a2a_button_github"
+              data-a2a-follow="shadow81627"
+              rel="noopener"
+            />
           </div>
         </div>
       </div>
