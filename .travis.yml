@@ -47,6 +47,10 @@ script:
   - ./node_modules/.bin/sentry-cli releases new -p pocketpasta $VERSION
   # Associate commits with the release
   - ./node_modules/.bin/sentry-cli releases set-commits "$VERSION" --auto
+
+before_deploy:
+  - npx semantic-release
+  - npm run generate:modern
 deploy:
   # Keep dist folder for deploy
   skip_cleanup: true
@@ -75,5 +79,3 @@ notifications:
   email:
     recipients:
       - damien.robinson@pocketpasta.com
-    on_success: always
-    on_failure: always
