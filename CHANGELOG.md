@@ -1,3 +1,45 @@
+## [0.7.11](https://github.com/shadow81627/pocketpasta/compare/v0.7.10...v0.7.11) (2019-06-09)
+
+
+### Performance Improvements
+
+* **index:** cloudinary image cdn for logo ([40ae50b](https://github.com/shadow81627/pocketpasta/commit/40ae50b))
+
+## [0.7.10](https://github.com/shadow81627/pocketpasta/compare/v0.7.9...v0.7.10) (2019-06-08)
+
+
+### Performance Improvements
+
+* **home:** add cloudinary image cdn ([bd78b78](https://github.com/shadow81627/pocketpasta/commit/bd78b78))
+
+## [0.7.9](https://github.com/shadow81627/pocketpasta/compare/v0.7.8...v0.7.9) (2019-06-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency firebase to v6.1.1 ([f494fa9](https://github.com/shadow81627/pocketpasta/commit/f494fa9))
+
+## [0.7.8](https://github.com/shadow81627/pocketpasta/compare/v0.7.7...v0.7.8) (2019-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/auth to v4.6.6 ([37db350](https://github.com/shadow81627/pocketpasta/commit/37db350))
+
+## [0.7.7](https://github.com/shadow81627/pocketpasta/compare/v0.7.6...v0.7.7) (2019-06-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/axios to v5.5.4 ([b6702f1](https://github.com/shadow81627/pocketpasta/commit/b6702f1))
+
+## [0.7.6](https://github.com/shadow81627/pocketpasta/compare/v0.7.5...v0.7.6) (2019-06-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt to v2.8.1 ([f460a44](https://github.com/shadow81627/pocketpasta/commit/f460a44))
+
 ## [0.7.5](https://github.com/shadow81627/pocketpasta/compare/v0.7.4...v0.7.5) (2019-06-04)
 
 
