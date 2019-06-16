@@ -1,3 +1,31 @@
+## [0.7.15](https://github.com/shadow81627/pocketpasta/compare/v0.7.14...v0.7.15) (2019-06-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bootstrap-vue to v2.0.0-rc.23 ([5722bb6](https://github.com/shadow81627/pocketpasta/commit/5722bb6))
+
+## [0.7.14](https://github.com/shadow81627/pocketpasta/compare/v0.7.13...v0.7.14) (2019-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency firebase to v6.2.0 ([7137122](https://github.com/shadow81627/pocketpasta/commit/7137122))
+
+## [0.7.13](https://github.com/shadow81627/pocketpasta/compare/v0.7.12...v0.7.13) (2019-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/auth to v4.7.0 ([5367142](https://github.com/shadow81627/pocketpasta/commit/5367142))
+
+## [0.7.12](https://github.com/shadow81627/pocketpasta/compare/v0.7.11...v0.7.12) (2019-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @nuxtjs/recaptcha to v0.5.0 ([61be27d](https://github.com/shadow81627/pocketpasta/commit/61be27d))
+
 ## [0.7.11](https://github.com/shadow81627/pocketpasta/compare/v0.7.10...v0.7.11) (2019-06-09)
 
 
