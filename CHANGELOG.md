@@ -1,3 +1,58 @@
+# [0.8.0](https://github.com/shadow81627/pocketpasta/compare/v0.7.21...v0.8.0) (2019-06-23)
+
+
+### Bug Fixes
+
+* **recipe:** only show image if there is one ([b434b29](https://github.com/shadow81627/pocketpasta/commit/b434b29))
+* **recipe:** update total cook time ([6ce312e](https://github.com/shadow81627/pocketpasta/commit/6ce312e))
+
+
+### Features
+
+* **recipes:** add roast potatoes ([971bc4c](https://github.com/shadow81627/pocketpasta/commit/971bc4c))
+
+## [0.7.21](https://github.com/shadow81627/pocketpasta/compare/v0.7.20...v0.7.21) (2019-06-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt-i18n to v5.12.7 ([34bd78b](https://github.com/shadow81627/pocketpasta/commit/34bd78b))
+
+## [0.7.20](https://github.com/shadow81627/pocketpasta/compare/v0.7.19...v0.7.20) (2019-06-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency firebase to v6.2.2 ([7e52541](https://github.com/shadow81627/pocketpasta/commit/7e52541))
+
+## [0.7.19](https://github.com/shadow81627/pocketpasta/compare/v0.7.18...v0.7.19) (2019-06-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt-i18n to v5.12.6 ([99180e7](https://github.com/shadow81627/pocketpasta/commit/99180e7))
+
+## [0.7.18](https://github.com/shadow81627/pocketpasta/compare/v0.7.17...v0.7.18) (2019-06-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency nuxt-i18n to v5.12.5 ([8950754](https://github.com/shadow81627/pocketpasta/commit/8950754))
+
+## [0.7.17](https://github.com/shadow81627/pocketpasta/compare/v0.7.16...v0.7.17) (2019-06-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency firebase to v6.2.1 ([50bccc9](https://github.com/shadow81627/pocketpasta/commit/50bccc9))
+
+## [0.7.16](https://github.com/shadow81627/pocketpasta/compare/v0.7.15...v0.7.16) (2019-06-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency bootstrap-vue to v2.0.0-rc.24 ([6e4d433](https://github.com/shadow81627/pocketpasta/commit/6e4d433))
+
 ## [0.7.15](https://github.com/shadow81627/pocketpasta/compare/v0.7.14...v0.7.15) (2019-06-14)
 
 
